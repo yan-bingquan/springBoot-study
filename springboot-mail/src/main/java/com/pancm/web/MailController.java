@@ -51,6 +51,7 @@ public class MailController {
 	/*
 	 * 发送普通邮件
 	 */
+    @ResponseBody
     @PostMapping("/sendMail")
     public String sendMail(@RequestBody Mail mail) {
     	SimpleMailMessage message = new SimpleMailMessage();
@@ -67,6 +68,7 @@ public class MailController {
     /*
      *  发送附件
      */
+    @ResponseBody	
     @PostMapping("/sendAttachments")
     public String sendAttachmentsMail(@RequestBody Mail mail) throws MessagingException  {
 
@@ -86,6 +88,7 @@ public class MailController {
     /*
      * 发送静态资源
      */
+    @ResponseBody	  
     @PostMapping("/sendInlineMail")
     public String sendInlineMail(@RequestBody Mail mail) throws Exception {
 
@@ -107,6 +110,7 @@ public class MailController {
     /*
      * 发送静态资源
      */
+    @ResponseBody	 
     @PostMapping("/sendTemplateMail")
     public void sendTemplateMail(@RequestBody Mail mail) throws Exception {
 
